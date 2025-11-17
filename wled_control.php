@@ -11,7 +11,7 @@ require_once("common.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>WLED Control</title>
-  <link rel="stylesheet" href="plugin.php?plugin=css/fpp-WLED-Control&file=wled_control.css&nopage=1"/>
+  <link rel="stylesheet" href="plugin.php?plugin=fpp-WLED-Control&file=css/wled_control.css&nopage=1"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
