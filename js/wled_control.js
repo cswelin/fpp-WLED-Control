@@ -264,36 +264,41 @@ $(document).ready(function () {
         wledControlConfig.effectDetails = {}
 
         specialPalettes = specialPalettes.filter(p => p.name !== 'Default');
-
-        data.args.forEach(arg => {
-          if (arg.type === 'range') {
-            if (arg.name === 'Brightness') {
-              wledControlConfig.effectDetails[arg.name] = wledControlConfig.brightness
-            } else {
-              wledControlConfig.effectDetails[arg.name] = parseInt(arg.default)
-            }
-          } else if (arg.type === 'color') {
-            wledControlConfig.colors.push(arg.default)
-          } else if (arg.type === 'string' && arg.contents) {
-            if (arg.name === 'Palette') {
-              const defaultPalette = arg.default || arg.contents[0];
-              const defaultColors = data.args.filter(a => a.type === 'color').map(a => a.default);
-              wledControlConfig.effectDetails[arg.name] = defaultPalette;
-              wledControlConfig.selectedPalette = defaultPalette;
-              if (defaultPalette && !defaultPalette.startsWith('*')) {
-                specialPalettes.unshift({
-                  name: 'Default',
-                  colors: [defaultColors[0]]
-                });
+ 
+        if (data != undefined && data.args != undefined) {
+          data.args.forEach(arg => {
+            if (arg.type === 'range') {
+              if (arg.name === 'Brightness') {
+                wledControlConfig.effectDetails[arg.name] = wledControlConfig.brightness
+              } else {
+                wledControlConfig.effectDetails[arg.name] = parseInt(arg.default)
               }
-            } else {
-              wledControlConfig.effectDetails[arg.name] = arg.default || arg.contents[0]
+            } else if (arg.type === 'color') {
+              wledControlConfig.colors.push(arg.default)
+            } else if (arg.type === 'string' && arg.contents) {
+              if (arg.name === 'Palette') {
+                const defaultPalette = arg.default || arg.contents[0];
+                const defaultColors = data.args.filter(a => a.type === 'color').map(a => a.default);
+                wledControlConfig.effectDetails[arg.name] = defaultPalette;
+                wledControlConfig.selectedPalette = defaultPalette;
+                if (defaultPalette && !defaultPalette.startsWith('*')) {
+                  specialPalettes.unshift({
+                    name: 'Default',
+                    colors: [defaultColors[0]]
+                  });
+                }
+              } else {
+                wledControlConfig.effectDetails[arg.name] = arg.default || arg.contents[0]
+              }
             }
-          }
-        })
+          })
+        }
 
         SaveWledControlConfig()
-        updateEffectControls(data.args)
+
+        if (data.args != undefined) {
+          updateEffectControls(data.args)
+        }
         updateCustomColorDisplay()
         populatePalettes()
         checkAndRunEffect()

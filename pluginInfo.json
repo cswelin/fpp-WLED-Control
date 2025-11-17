@@ -3,9 +3,9 @@
 	"name": "WLED Control",
 	"author": "Taylor Mitchell",
 	"description": "WLED-like control interface for FPP",
-	"homeURL": "https://github.com/CaffeinatedFunctionality/fpp-WLED-Control",
-	"srcURL": "https://github.com/CaffeinatedFunctionality/fpp-WLED-Control.git",
-	"bugURL": "https://github.com/CaffeinatedFunctionality/fpp-WLED-Control/issues",
+	"homeURL": "https://github.com/cswelin/fpp-WLED-Control",
+	"srcURL": "https://github.com/cswelin/fpp-WLED-Control.git",
+	"bugURL": "https://github.com/cswelin/fpp-WLED-Control/issues",
 	"allowUpdates": 1,
 	"versions": [
 		{
@@ -29,6 +29,12 @@
 		{
 			"minFPPVersion": "8.0",
 			"maxFPPVersion": "8.99",
+			"branch": "master",
+			"sha": ""
+		},
+		{
+			"minFPPVersion": "9.0",
+			"maxFPPVersion": "9.99",
 			"branch": "master",
 			"sha": ""
 		}

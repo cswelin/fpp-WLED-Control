@@ -1,3 +1,4 @@
+
 <?php
 
 $skipJSsettings = 1;
@@ -8,9 +9,12 @@ require_once("common.php");
 <div class="head">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>WLED Control</title>
-  <link href="css/wled_control.css" rel="stylesheet">
+  <link rel="stylesheet" href="plugin.php?plugin=css/fpp-WLED-Control&file=wled_control.css&nopage=1"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   </d>
   <div class="body">
     <div class="top">
@@ -107,10 +111,10 @@ require_once("common.php");
       </button>
     </div>
 
+    <script src="plugin.php?plugin=fpp-WLED-Control&file=js/palettes.js&nopage=1"></script>
+    <script src="plugin.php?plugin=fpp-WLED-Control&file=js/wled_control.js&nopage=1"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    <script src="js/palettes.js"></script>
-    <script src="js/wled_control.js"></script>
 
     <!-- Add this modal for the custom palette form -->
     <div id="customPaletteModal" class="modal">
